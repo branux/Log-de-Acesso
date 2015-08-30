@@ -50,8 +50,15 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Entidades\UsuarioTest.cs" />
+    <Compile Include="Entidades\EntidadeUsuarioTest.cs" />
+    <Compile Include="Entidades\EntidadeClienteTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\app\LogAcessoDemo.App.Dominio\LogAcessoDemo.App.Dominio.csproj">
+      <Project>{1337e287-e26c-4b73-814d-aa2c989b5897}</Project>
+      <Name>LogAcessoDemo.App.Dominio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
