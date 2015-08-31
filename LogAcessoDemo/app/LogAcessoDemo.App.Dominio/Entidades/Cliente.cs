@@ -1,18 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace LogAcessoDemo.App.Dominio.Entidades
 {
     public class Cliente : EntidadeBase
     {
-        public string Nome { get; set; }
+        protected Cliente()
+        { }
+
+        public Cliente(string nome)
+        {
+            Nome = nome;
+        }
+
+        public string Nome { get; protected set; }
 
         public override bool Validar()
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(Nome))
+                return false;
+
+            return true;
         }
     }
 }

@@ -14,5 +14,18 @@ namespace LogAcessoDemo.Test.Dominio.Entidades
         {
             Assert.IsTrue(typeof(Cliente).IsSubclassOf(typeof(EntidadeBase)), "Entidade não derivada da EntidadeBase");
         }
+
+        [TestMethod]
+        public void Não_poderá_ser_validado_se_nome_for_nulo_ou_branco()
+        {
+            //arrange
+            var cliente = new Cliente(null);
+
+            //act
+            var clienteEhValido = cliente.Validar();
+
+            //assert
+            Assert.AreEqual(false, clienteEhValido);
+        }
     }
 }

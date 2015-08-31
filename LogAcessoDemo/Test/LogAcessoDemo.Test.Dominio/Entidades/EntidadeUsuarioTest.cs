@@ -29,5 +29,17 @@ namespace LogAcessoDemo.Test.Dominio.Entidades
             //assert
             Assert.AreEqual(false, usuarioEhValido);
         }
+
+        #region TODO
+
+
+        //Não_poderá_ser_validado_se_login_for_nulo
+        //Não_poderá_ser_validado_se_login_for_empty
+        //Não_poderá_ser_validado_se_login_tiver_menos_de_6_e_mais_12_caracteres
+
+
+        //Não_poderá_ser_validado_se_senha_tiver_menos_de_6_caracteres
+
+        #endregion
     }
 }
