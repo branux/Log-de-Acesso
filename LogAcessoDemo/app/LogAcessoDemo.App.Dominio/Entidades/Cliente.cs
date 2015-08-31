@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 
 namespace LogAcessoDemo.App.Dominio.Entidades
 {
-    public class Cliente
+    public class Cliente : EntidadeBase
     {
-        public int ID { get; set; }
         public string Nome { get; set; }
+
+        public override bool Validar()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
