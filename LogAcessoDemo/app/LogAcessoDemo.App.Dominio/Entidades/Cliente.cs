@@ -1,4 +1,5 @@
-﻿
+﻿using System.Collections.Generic;
+
 namespace LogAcessoDemo.App.Dominio.Entidades
 {
     public class Cliente : EntidadeBase
@@ -9,16 +10,21 @@ namespace LogAcessoDemo.App.Dominio.Entidades
         public Cliente(string nome)
         {
             Nome = nome;
+            Validar();
         }
 
         public string Nome { get; protected set; }
 
-        public override bool Validar()
+        public override void Validar()
         {
-            if (string.IsNullOrEmpty(Nome))
-                return false;
+            var msg = new List<string>();
 
-            return true;
+            if (string.IsNullOrEmpty(Nome))
+                msg.Add("O nome do cliente deve ser preenchido");
+
+
+            throw new Exceptions.ClienteInvalidoException(UnirMensagensErro(msg));
+
         }
     }
 }

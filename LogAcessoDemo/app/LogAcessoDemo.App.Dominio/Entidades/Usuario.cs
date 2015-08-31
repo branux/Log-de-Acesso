@@ -1,4 +1,5 @@
 ﻿
+using System.Collections.Generic;
 namespace LogAcessoDemo.App.Dominio.Entidades
 {
     public class Usuario : EntidadeBase
@@ -8,9 +9,10 @@ namespace LogAcessoDemo.App.Dominio.Entidades
 
         public Usuario(string nome, string login, string senha)
         {
-            Nome = nome;
-            Login = login;
-            Senha = senha;
+            Nome = nome ?? "";
+            Login = login ?? "";
+            Senha = senha ?? "";
+            Validar();
         }
 
         public string Nome { get; protected set; }
@@ -18,13 +20,28 @@ namespace LogAcessoDemo.App.Dominio.Entidades
         public string Senha { get; protected set; }
 
 
-        public override bool Validar()
+        public override void Validar()
         {
-            if (string.IsNullOrEmpty(Nome))
-                return false;
+            var mensagens = new List<string>();
+
+            if (string.IsNullOrEmpty(Nome.Trim()))
+                mensagens.Add("O nome do usuário deve ser preenchido");
+            
+
+            if (Login.Trim().Length < 6 || Login.Trim().Length > 12)
+                mensagens.Add("O login do usuário deve ter entre 6 e 12 caracteres");
+
+            
+
+            if (Senha.Trim().Length < 6)
+                mensagens.Add("A senha do usuário deve ter ao menos 6 caracteres");
 
 
-            return true;
+
+            if (mensagens.Count > 0)
+                throw new Exceptions.UsuarioInvalidoException(UnirMensagensErro(mensagens));
+
+
         }
     }
 }

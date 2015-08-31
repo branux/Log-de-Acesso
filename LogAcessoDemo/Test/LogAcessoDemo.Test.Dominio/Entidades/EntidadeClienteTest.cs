@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using LogAcessoDemo.App.Dominio.Entidades;
+using LogAcessoDemo.App.Dominio.Exceptions;
 
 namespace LogAcessoDemo.Test.Dominio.Entidades
 {
@@ -16,16 +17,11 @@ namespace LogAcessoDemo.Test.Dominio.Entidades
         }
 
         [TestMethod]
+        [ExpectedException(typeof(ClienteInvalidoException))]
         public void Não_poderá_ser_validado_se_nome_for_nulo_ou_branco()
         {
             //arrange
             var cliente = new Cliente(null);
-
-            //act
-            var clienteEhValido = cliente.Validar();
-
-            //assert
-            Assert.AreEqual(false, clienteEhValido);
         }
     }
 }

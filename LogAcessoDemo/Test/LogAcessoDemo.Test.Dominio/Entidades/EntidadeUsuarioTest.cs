@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using LogAcessoDemo.App.Dominio.Entidades;
+using LogAcessoDemo.App.Dominio.Exceptions;
 
 namespace LogAcessoDemo.Test.Dominio.Entidades
 {
@@ -18,28 +19,69 @@ namespace LogAcessoDemo.Test.Dominio.Entidades
 
 
         [TestMethod]
+        [ExpectedException(typeof(UsuarioInvalidoException))]
         public void Não_poderá_ser_validado_se_nome_for_nulo_ou_branco()
         {
             //arrange
             var usuario = new Usuario(null, "fnalin", "123@qwe");
 
-            //act
-            var usuarioEhValido = usuario.Validar();
-
-            //assert
-            Assert.AreEqual(false, usuarioEhValido);
         }
 
-        #region TODO
+        [TestMethod]
+        [ExpectedException(typeof(UsuarioInvalidoException))]
+        public void Não_poderá_ser_validado_se_login_for_nulo()
+        {
+            //arrange
+            var usuario = new Usuario("Fabiano Nalin", null, "123@qwe");
+        }
 
+        [TestMethod]
+        [ExpectedException(typeof(UsuarioInvalidoException))]
+        public void Não_poderá_ser_validado_se_login_for_empty()
+        {
+            //arrange
+            var usuario = new Usuario("Fabiano Nalin", "", "123@qwe");
+        }
 
-        //Não_poderá_ser_validado_se_login_for_nulo
-        //Não_poderá_ser_validado_se_login_for_empty
-        //Não_poderá_ser_validado_se_login_tiver_menos_de_6_e_mais_12_caracteres
+        [TestMethod]
+        [ExpectedException(typeof(UsuarioInvalidoException))]
+        public void Não_poderá_ser_validado_se_login_tiver_menos_de_6_caracteres()
+        {
+            //arrange
+            var usuario = new Usuario("Fabiano Nalin", "12345", "123@qwe");
+        }
 
+        [TestMethod]
+        [ExpectedException(typeof(UsuarioInvalidoException))]
+        public void Não_poderá_ser_validado_se_login_tiver_mais_de_12_caracteres()
+        {
+            //arrange
+            var usuario = new Usuario("Fabiano Nalin", "1234567890123", "123@qwe");
+        }
 
-        //Não_poderá_ser_validado_se_senha_tiver_menos_de_6_caracteres
+        [TestMethod]
+        [ExpectedException(typeof(UsuarioInvalidoException))]
+        public void Não_poderá_ser_validado_se_senha_a_for_nula()
+        {
+            //arrange
+            var usuario = new Usuario("Fabiano Nalin", "123456789012", null);
+        }
 
-        #endregion
+        [TestMethod]
+        [ExpectedException(typeof(UsuarioInvalidoException))]
+        public void Não_poderá_ser_validado_se_a_senha_for_empty()
+        {
+            //arrange
+            var usuario = new Usuario("Fabiano Nalin", "123456789012", "");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(UsuarioInvalidoException))]
+        public void Não_poderá_ser_validado_se_senha_tiver_menos_de_6_caracteres()
+        {
+            //arrange
+            var usuario = new Usuario("Fabiano Nalin", "123456789012", "12345");
+        }
+
     }
 }
