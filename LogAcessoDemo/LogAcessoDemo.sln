@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interface Usuário", "Inter
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogAcessoDemo.App.UI.WebMVC", "app\LogAcessoDemo.App.UI.WebMVC\LogAcessoDemo.App.UI.WebMVC.csproj", "{B70A81BD-2CF9-4EFE-9725-F3A4AA696C6D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogAcessoDemo.Test.UI.WebMVC", "test\LogAcessoDemo.Test.UI.WebMVC\LogAcessoDemo.Test.UI.WebMVC.csproj", "{EDC2AC48-1910-4F84-AFB7-2EB864EDA1EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{B70A81BD-2CF9-4EFE-9725-F3A4AA696C6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B70A81BD-2CF9-4EFE-9725-F3A4AA696C6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B70A81BD-2CF9-4EFE-9725-F3A4AA696C6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDC2AC48-1910-4F84-AFB7-2EB864EDA1EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDC2AC48-1910-4F84-AFB7-2EB864EDA1EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDC2AC48-1910-4F84-AFB7-2EB864EDA1EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDC2AC48-1910-4F84-AFB7-2EB864EDA1EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,5 +45,6 @@ Global
 		{1337E287-E26C-4B73-814D-AA2C989B5897} = {66BAC68C-4588-4003-8A8E-D8E19304195E}
 		{6FA58464-ECC6-4432-9DCB-C977CEED09B9} = {66BAC68C-4588-4003-8A8E-D8E19304195E}
 		{B70A81BD-2CF9-4EFE-9725-F3A4AA696C6D} = {03679003-4774-4181-85DC-6C09D20F4EE1}
+		{EDC2AC48-1910-4F84-AFB7-2EB864EDA1EA} = {03679003-4774-4181-85DC-6C09D20F4EE1}
 	EndGlobalSection
 EndGlobal

@@ -10,7 +10,7 @@ namespace LogAcessoDemo.App.UI.WebMVC.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return View("Index");
         }
 
         public ActionResult About()
