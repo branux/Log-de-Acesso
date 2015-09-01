@@ -44,6 +44,7 @@
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Exceptions\ClienteInvalidoException.cs" />
     <Compile Include="Exceptions\UsuarioInvalidoException.cs" />
+    <Compile Include="Interfaces\Servico\IAutenticacaoServico.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
