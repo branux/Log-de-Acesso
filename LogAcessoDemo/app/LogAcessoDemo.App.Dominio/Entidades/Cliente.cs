@@ -9,7 +9,7 @@ namespace LogAcessoDemo.App.Dominio.Entidades
 
         public Cliente(string nome)
         {
-            Nome = nome;
+            Nome = nome ?? "";
             Validar();
         }
 
@@ -19,8 +19,8 @@ namespace LogAcessoDemo.App.Dominio.Entidades
         {
             var msg = new List<string>();
 
-            if (string.IsNullOrEmpty(Nome))
-                msg.Add("O nome do cliente deve ser preenchido");
+            if (Nome.Trim().Length < 6)
+                msg.Add("O nome do cliente deve ter ao menos 6 caracteres");
 
 
             throw new Exceptions.ClienteInvalidoException(UnirMensagensErro(msg));
