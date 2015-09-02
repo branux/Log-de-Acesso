@@ -3,6 +3,6 @@ namespace LogAcessoDemo.App.Dominio.Interfaces.Servico
 {
     public interface IAutenticacaoServico : System.IDisposable
     {
-        Entidades.Usuario ObterDadosAposAutenticando(string login, string senha);
+        Entidades.Usuario ObterDadosAposAutenticar(string login, string senha);
     }
 }

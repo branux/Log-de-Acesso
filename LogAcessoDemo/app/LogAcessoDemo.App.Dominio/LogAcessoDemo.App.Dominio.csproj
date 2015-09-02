@@ -39,11 +39,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Servico\AutenticacaoServico.cs" />
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\_EntidadeBase.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Exceptions\ClienteInvalidoException.cs" />
     <Compile Include="Exceptions\UsuarioInvalidoException.cs" />
+    <Compile Include="Interfaces\Repositorio\IUsuarioRepositorio.cs" />
     <Compile Include="Interfaces\Servico\IAutenticacaoServico.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

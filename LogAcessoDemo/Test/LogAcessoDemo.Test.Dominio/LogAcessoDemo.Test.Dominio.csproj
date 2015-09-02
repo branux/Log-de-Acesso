@@ -35,6 +35,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Moq, Version=4.2.1507.118, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Moq.4.2.1507.0118\lib\net40\Moq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -53,12 +57,17 @@
     <Compile Include="Entidades\EntidadeUsuarioTest.cs" />
     <Compile Include="Entidades\EntidadeClienteTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servico\ServicoIAutenticacaoTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\app\LogAcessoDemo.App.Dominio\LogAcessoDemo.App.Dominio.csproj">
       <Project>{1337e287-e26c-4b73-814d-aa2c989b5897}</Project>
       <Name>LogAcessoDemo.App.Dominio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
