@@ -5,7 +5,7 @@ using Moq;
 namespace LogAcessoDemo.Test.Dominio.Servico
 {
     [TestClass]
-    public class ServicoIAutenticacaoTest
+    public class ServicoAutenticacaoTest
     {
 
         //dado AutenticacaoServico
@@ -16,7 +16,6 @@ namespace LogAcessoDemo.Test.Dominio.Servico
             //arrange
             var mockRep = new Mock<App.Dominio.Interfaces.Repositorio.IUsuarioRepositorio>();
             mockRep.Setup(mr => mr.ObterUsuarioAutenticado("user_silva","senha123")).Returns(ObterUsuarioStub);
-
             var _usuarioServ = new App.Dominio.Servico.AutenticacaoServico(mockRep.Object);
 
             //act

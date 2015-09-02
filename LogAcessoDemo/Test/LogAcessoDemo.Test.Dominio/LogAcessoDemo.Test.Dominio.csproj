@@ -57,7 +57,7 @@
     <Compile Include="Entidades\EntidadeUsuarioTest.cs" />
     <Compile Include="Entidades\EntidadeClienteTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Servico\ServicoIAutenticacaoTest.cs" />
+    <Compile Include="Servico\ServicoAutenticacaoTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\app\LogAcessoDemo.App.Dominio\LogAcessoDemo.App.Dominio.csproj">
